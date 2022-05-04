@@ -41,6 +41,11 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
       {...restProps}
     >
       {children}
+      {toggleShow ? (
+        <img src="/images/icons/icons/close-slim.png" />
+      ) : (
+        <img src="/images/icons/icons/add.png" />
+      )}
     </Header>
   );
 };
