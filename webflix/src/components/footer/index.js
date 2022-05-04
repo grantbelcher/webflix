@@ -16,21 +16,18 @@ export default function Footer({ children, ...restProps }) {
 Footer.Row = function FooterRow({ children, ...restProps }) {
   return <Row>{children}</Row>;
 };
-Footer.Column = function FooterRow({ children, ...restProps }) {
+Footer.Column = function FooterColumn({ children, ...restProps }) {
   return <Column>{children}</Column>;
 };
-Footer.Link = function FooterRow({ children, ...restProps }) {
+Footer.Link = function FooterLink({ children, ...restProps }) {
   return <Link>{children}</Link>;
 };
-Footer.Title = function FooterRow({ children, ...restProps }) {
+Footer.Title = function FooterTitle({ children, ...restProps }) {
   return <Title>{children}</Title>;
 };
-Footer.Text = function FooterRow({ children, ...restProps }) {
+Footer.Text = function FooterText({ children, ...restProps }) {
   return <Text>{children}</Text>;
 };
-Footer.Text = function FooterRow({ children, ...restProps }) {
-  return <Text>{children}</Text>;
-};
-Footer.Break = function FooterRow({ children, ...restProps }) {
+Footer.Break = function FooterBreak({ children, ...restProps }) {
   return <Break>{children}</Break>;
 };
