@@ -72,6 +72,7 @@ export const Body = styled.div`
   font-weight: normal;
   line-height: normal;
   background: #303030;
+  padding: 0.8em 2.2em 0.8em 1.2em;
   white-space: pre-wrap;
   user-select: none;
   overflow: hidden;

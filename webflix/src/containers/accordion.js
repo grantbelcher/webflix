@@ -1,6 +1,7 @@
 import React from "react";
 import faqsData from "../fixtures/faqs.json";
 import { Accordion } from "../components";
+import { OptForm } from "../components";
 
 export function FaqsContainer() {
   console.log(faqsData, "yppp");
@@ -16,6 +17,14 @@ export function FaqsContainer() {
           </Accordion.Item>
         );
       })}
+      <OptForm>
+        <OptForm.Input placeholder="email" />
+        <OptForm.Button>Try it now</OptForm.Button>
+        <OptForm.Break />
+        <OptForm.Text>
+          Ready to watch? Enter your email to create or restart your membership
+        </OptForm.Text>
+      </OptForm>
     </Accordion>
   );
 }
