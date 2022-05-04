@@ -2,6 +2,7 @@ import React from "react";
 import {
   Inner,
   Container,
+  Item,
   Pane,
   Title,
   Subtitle,
@@ -14,7 +15,11 @@ export default function Jumbotron({
   ...restProps
 }) {
   console.log(direction, "direction");
-  return <Inner direction={direction}>{children}</Inner>;
+  return (
+    <Item {...restProps}>
+      <Inner direction={direction}>{children}</Inner>
+    </Item>
+  );
 }
 
 Jumbotron.Container = function JumbotronContainer({ children, ...restProps }) {
@@ -26,13 +31,13 @@ Jumbotron.Pane = function JumbotronPain({ children, ...restProps }) {
 };
 
 Jumbotron.Title = function JumbtronTitle({ children, ...restProps }) {
-  return <Title>{children}</Title>;
+  return <Title {...restProps}>{children}</Title>;
 };
 
 Jumbotron.Subtitle = function ({ children, ...restProps }) {
-  return <Subtitle>{children}</Subtitle>;
+  return <Subtitle {...restProps}>{children}</Subtitle>;
 };
 
 Jumbotron.Image = function ({ src, alt, ...restProps }) {
-  return <Image src={src} alt={alt} />;
+  return <Image src={src} alt={alt} {...restProps} />;
 };
