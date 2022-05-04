@@ -6,13 +6,13 @@ import {
 } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
 
-import { SignUp } from "./pages/sign-up";
+import { Home } from "./pages";
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path={ROUTES.SIGNUP} element={<Home />} />
       </Routes>
     </Router>
   );

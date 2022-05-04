@@ -4,4 +4,4 @@ export const BROWSE = "/browse";
 
 export const SIGNIN = "/sign_in";
 
-export const SIGNUP = "/sign-up";
+export const SIGNUP = "/sign_up";
