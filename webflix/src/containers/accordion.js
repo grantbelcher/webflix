@@ -4,7 +4,6 @@ import { Accordion } from "../components";
 import { OptForm } from "../components";
 
 export function FaqsContainer() {
-  console.log(faqsData, "yppp");
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>
