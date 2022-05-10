@@ -1,7 +1,7 @@
 import { Header } from "../components";
 import logo from "../logo.svg";
 
-export function HeaderContainer() {
+export function HeaderContainer({ children }) {
   console.log(Header.Frame, "look here");
   return (
     <Header>
@@ -9,6 +9,7 @@ export function HeaderContainer() {
         <Header.Logo to="/" alt="Webflix" src={logo} />
         <Header.ButtonLink to="/">Test</Header.ButtonLink>
       </Header.Frame>
+      {children}
     </Header>
   );
 }
