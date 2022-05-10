@@ -2,7 +2,6 @@ import { Header } from "../components";
 import logo from "../logo.svg";
 
 export function HeaderContainer({ children }) {
-  console.log(Header.Frame, "look here");
   return (
     <Header>
       <Header.Frame>
