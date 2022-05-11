@@ -1,9 +1,9 @@
 import Firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-import { seedDatabase } from "../seed";
 
-// we need to seed DB
+// uncomment
+// import { seedDatabase } from "../seed";
 
 // we need a config for DB here
 
@@ -18,6 +18,6 @@ const config = {
 
 const firebase = Firebase.initializeApp(config);
 
-seedDatabase(firebase);
+// seedDatabase(firebase);
 
 export { firebase };
