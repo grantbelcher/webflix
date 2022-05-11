@@ -6,7 +6,7 @@ export function HeaderContainer({ children }) {
     <Header>
       <Header.Frame>
         <Header.Logo to="/" alt="Webflix" src={logo} />
-        <Header.ButtonLink to="/">Test</Header.ButtonLink>
+        <Header.ButtonLink to="/signin">Sign In</Header.ButtonLink>
       </Header.Frame>
       {children}
     </Header>
