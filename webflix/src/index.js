@@ -4,17 +4,16 @@ import App from "./app";
 import "normalize.css";
 import { GlobalStyles } from "./global-styles";
 import reportWebVitals from "./reportWebVitals";
-
-console.log(
-  "Your environment variable TWILIO_ACCOUNT_SID has the value: ",
-  process.env.REACT_APP_JWT_KEY
-);
+import { firebase } from "./lib/firebase.prod";
+import { FirebaseContext } from "./context/firebase";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <GlobalStyles />
-    <App />
+    <FirebaseContext.Provider value={{ firebase }}>
+      <GlobalStyles />
+      <App />
+    </FirebaseContext.Provider>
   </>
 );
 

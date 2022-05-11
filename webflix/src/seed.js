@@ -22,6 +22,7 @@ export function seedDatabase(firebase) {
     maturity: "18",
     slug: "tiger-king",
   });
+  console.log(firebase.firestore().collection("series"));
   firebase.firestore().collection("series").add({
     id: getUUID(),
     title: "Amanda Knox",
