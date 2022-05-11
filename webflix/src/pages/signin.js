@@ -42,8 +42,12 @@ export default function SignIn() {
               Submit
             </Form.Submit>
           </Form.Base>
-          <Form.Text>form text</Form.Text>
-          <Form.TextSmall>form text small</Form.TextSmall>
+          <Form.Text>
+            New to Webflix? <Form.Link to="/signup">Sign up now</Form.Link>
+          </Form.Text>
+          <Form.TextSmall>
+            This page is protected by Google reCAPTCHA
+          </Form.TextSmall>
         </Form>
       </HeaderContainer>
       <FooterContainer />
