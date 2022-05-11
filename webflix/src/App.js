@@ -5,7 +5,7 @@ import {
   Switch,
 } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
-
+import { IsUserRedirect } from "./helpers/routes";
 import { Home, Browse, SignIn, SignUp } from "./pages";
 
 export default function App() {
