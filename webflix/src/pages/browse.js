@@ -1,11 +1,16 @@
 import { useContext } from "react";
 import { HeaderContainer } from "../containers/header";
 import { FirebaseContext } from "../context/firebase";
+import { useContent } from "../hooks";
 
 export default function Browse() {
   const { firebase } = useContext(FirebaseContext);
 
-  console.log(firebase.auth().currentUser, "CURRENT USER");
+  const series = useContent("series");
+  const films = useContent("films");
+
+  console.log(series, "series here");
+  console.log(films, "films here");
   const handleLogOut = () => {
     firebase.auth().signOut();
   };
