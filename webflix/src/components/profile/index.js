@@ -17,8 +17,14 @@ Profile.User = function ProfileUser({ children, ...restProps }) {
 Profile.Name = function ProfileName({ children, ...restProps }) {
   return <Name {...restProps}>{children}</Name>;
 };
-Profile.Picture = function ProfilePicture({ ...restProps }) {
-  return <Picture {...restProps} />;
+Profile.Picture = function ProfilePicture({ src, ...restProps }) {
+  console.log(src, "SOURCE");
+  return (
+    <Picture
+      {...restProps}
+      src={src ? `../images/users/${src}.png` : `../images/misc/loading.gif`}
+    />
+  );
 };
 
 {

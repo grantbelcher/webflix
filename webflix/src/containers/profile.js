@@ -17,10 +17,7 @@ export function SelectProfileContainer({ user, setProfile }) {
         <Profile.Title>Who's watching?</Profile.Title>
         <Profile.List>
           <Profile.User>
-            <Profile.Picture
-              src={`../images/users/${user.photoURL}.png`}
-              alt="icon"
-            />
+            <Profile.Picture src={user.photoURL} alt="icon" />
             <Profile.Name>{user.displayName}</Profile.Name>
           </Profile.User>
         </Profile.List>
