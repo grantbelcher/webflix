@@ -19,7 +19,7 @@ export default function Browse({ user }) {
     <>
       <h1>Browse PAge</h1>
       <button onClick={() => handleLogOut()}>log out</button>
-      <BrowseContainer user={user} slides={slides} />
+      <BrowseContainer slides={slides} />
     </>
   );
 }
