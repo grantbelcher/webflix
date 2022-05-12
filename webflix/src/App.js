@@ -3,19 +3,36 @@ import {
   Route,
   Routes,
   Switch,
+  Navigate,
 } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
+import useAuthListener from "./hooks/useAuthListener";
 import { IsUserRedirect } from "./helpers/routes";
 import { Home, Browse, SignIn, SignUp } from "./pages";
 
 export default function App() {
+  const { user } = useAuthListener();
+
+  console.log(user, "useAuthListener state in App");
+
   return (
     <Router>
       <Routes>
         <Route exact path={ROUTES.HOME} element={<Home />} />
-        <Route exact path={ROUTES.BROWSE} element={<Browse />} />
-        <Route exact path={ROUTES.SIGNUP} element={<SignUp />} />
-        <Route exact path={ROUTES.SIGNIN} element={<SignIn />} />
+        <Route
+          exact
+          path={ROUTES.BROWSE}
+          element={user ? <Browse /> : <Navigate to={ROUTES.SIGNIN} />}
+        />
+        <Route
+          exact
+          path={ROUTES.SIGNUP}
+          element={user ? <Navigate to={ROUTES.SIGNUP} /> : <SignUp />}
+        />
+        <Route
+          path={ROUTES.SIGNIN}
+          element={user ? <Navigate to={ROUTES.BROWSE} /> : <SignIn />}
+        />
       </Routes>
     </Router>
   );

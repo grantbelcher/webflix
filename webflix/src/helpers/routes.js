@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
 // one function to check if user is logged in => redirects to browse page
 // if user is logged in, redired to loggedInPath, if user is not logged in then render children
@@ -13,7 +13,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
         }
         if (user) {
           return (
-            <Redirect
+            <Navigate
               to={{
                 pathname: loggedInPath,
               }}
@@ -23,7 +23,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
         // if all else fails, return null
         return null;
       }}
-    ></Route>
+    />
   );
 }
 
