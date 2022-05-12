@@ -5,7 +5,6 @@ import { FirebaseContext } from "../context/firebase";
 export default function useAuthListener() {
   const userToken = JSON.parse(localStorage.getItem("authUser"));
   // let userToken = null;
-  console.log(userToken, "user token from local storage");
   const [user, setUser] = useState(userToken);
 
   const { firebase } = useContext(FirebaseContext);

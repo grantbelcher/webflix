@@ -13,8 +13,6 @@ import { Home, Browse, SignIn, SignUp } from "./pages";
 export default function App() {
   const { user } = useAuthListener();
 
-  console.log(user, "useAuthListener state in App");
-
   return (
     <Router>
       <Routes>
@@ -22,7 +20,9 @@ export default function App() {
         <Route
           exact
           path={ROUTES.BROWSE}
-          element={user ? <Browse /> : <Navigate to={ROUTES.SIGNIN} />}
+          element={
+            user ? <Browse user={user} /> : <Navigate to={ROUTES.SIGNIN} />
+          }
         />
         <Route
           exact
