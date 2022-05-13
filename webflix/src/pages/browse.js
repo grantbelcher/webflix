@@ -15,11 +15,5 @@ export default function Browse({ user }) {
   const handleLogOut = () => {
     firebase.auth().signOut();
   };
-  return (
-    <>
-      <h1>Browse PAge</h1>
-      <button onClick={() => handleLogOut()}>log out</button>
-      <BrowseContainer slides={slides} />
-    </>
-  );
+  return <BrowseContainer slides={slides} />;
 }
