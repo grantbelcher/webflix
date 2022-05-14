@@ -43,7 +43,16 @@ export const Text = styled.p`
   }
 `;
 
-export const FeatureText = styled.p``;
+export const FeatureText = styled.p`
+  font-size: 18px;
+  color: white;
+  font-weight: ${({ fontWeight }) =>
+    fontWeight === "bold" ? "bold" : "normal"};
+  margin: 0;
+  @media (max-width: 600px) {
+    line-height: 22px;
+  }
+`;
 
 export const Feature = styled.div`
   display: flex;
