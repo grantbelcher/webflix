@@ -57,6 +57,7 @@ Header.Search = function HeaderSearch({
       </SearchIcon>
       <SearchInput
         value={searchTerm}
+        active={searchActive}
         onChange={({ target }) => setSearchTerm(target.value)}
       />
     </Search>
