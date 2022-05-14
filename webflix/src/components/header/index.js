@@ -11,6 +11,7 @@ import {
   TextLink,
   Feature,
   Picture,
+  PlayButton,
   Search,
   SearchIcon,
   SearchInput,
@@ -75,6 +76,10 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({
   ...restProps
 }) {
   return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
+};
+
+Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
+  return <PlayButton {...restProps}>{children}</PlayButton>;
 };
 
 Header.Frame = function HeaderFrame({ children, ...restProps }) {

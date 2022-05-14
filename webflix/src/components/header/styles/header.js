@@ -11,7 +11,18 @@ export const Logo = styled.img`
     width: 167px;
   }
 `;
-export const Button = styled.button``;
+export const Button = styled.button`
+  color: #000;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 130px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+`;
 
 export const ButtonLink = styled(ReactRouterLink)`
   display: block;
@@ -160,11 +171,31 @@ export const Search = styled.div`
     display: none;
   }
 `;
+
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  background-color: #e6e6e6;
+  color: #000;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 130px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #ff1e1e;
+    color: white;
+  }
+`;
+
 export const SearchInput = styled.input`
   background-color: #44444459;
   color: white;
   border: 1px solid white;
-  transition: width 1s;
+  transition: width 0.4s;
   height: 30px;
   font-size: 14px;
   margin-left: ${({ active }) => (active === true ? "10px" : "0")};
