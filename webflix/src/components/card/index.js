@@ -86,13 +86,13 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
     >
       <Content>
         <FeatureTitle>{itemFeature.title}</FeatureTitle>
-        <FeatureText>{itemFeature.text}</FeatureText>
+        <FeatureText>{itemFeature.description}</FeatureText>
         <FeatureClose onClick={() => setShowFeature(false)}>
           <img src="/images/icons/icons/close.png" alt="close" />
         </FeatureClose>
         <Group margin="30px 0" flexDirection="row" alignItems="center">
           <Maturity>
-            {itemFeature.maturity < 12 ? "PG" : itemFeature.maturity}
+            {itemFeature.maturity <= 12 ? "PG" : itemFeature.maturity}
           </Maturity>
           <FeatureText fontWeight="bold">
             {itemFeature.genre.charAt(0).toUpperCase() +
