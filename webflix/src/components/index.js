@@ -12,3 +12,5 @@ export { default as Feature } from "./feature";
 export { default as Form } from "./form";
 
 export { default as Profile } from "./profile";
+
+export { default as Card } from "./card";
