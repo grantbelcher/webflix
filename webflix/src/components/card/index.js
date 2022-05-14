@@ -91,7 +91,7 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
           <img src="/images/icons/icons/close.png" alt="close" />
         </FeatureClose>
         <Group margin="30px 0" flexDirection="row" alignItems="center">
-          <Maturity>
+          <Maturity rating={itemFeature.maturity}>
             {itemFeature.maturity <= 12 ? "PG" : itemFeature.maturity}
           </Maturity>
           <FeatureText fontWeight="bold">
