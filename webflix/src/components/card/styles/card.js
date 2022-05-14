@@ -21,7 +21,15 @@ export const Container = styled.div`
 
 `;
 
-export const Subtitle = styled.p``;
+export const Subtitle = styled.p`
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 2px;
+  user-select: none;
+  display: none;
+`;
 
 export const Group = styled.div`
   display: flex;
@@ -33,7 +41,8 @@ export const Group = styled.div`
 `;
 
 export const Text = styled.p`
-  font-size: 18px;
+  margin-top: 5px;
+  font-size: 10px;
   color: white;
   font-weight: ${({ fontWeight }) =>
     fontWeight === "bold" ? "bold" : "normal"};
