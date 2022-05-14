@@ -71,3 +71,11 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
 Card.Image = function CardImage({ ...restProps }) {
   return <Image {...restProps} />;
 };
+
+// Text,
+// Feature,
+// FeatureTitle,
+// FeatureText,
+// FeatureClose,
+// Maturity,
+// Content,

@@ -26,6 +26,8 @@ export function BrowseContainer({ slides }) {
     setSlideRows(slides[category]);
   }, [slides, category]);
 
+  console.log(slideRows, "rows");
+
   return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
@@ -76,6 +78,27 @@ export function BrowseContainer({ slides }) {
           <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
+      <Card.Group>
+        {slideRows.map((slideItem) => {
+          return (
+            <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+              <Card.Title>{slideItem.title}</Card.Title>
+              <Card.Entities>
+                {slideItem.data.map((item) => {
+                  console.log(item);
+                  return (
+                    <Card.Item key={item.docId} item={item}>
+                      <Card.Image
+                        src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+                      />
+                    </Card.Item>
+                  );
+                })}
+              </Card.Entities>
+            </Card>
+          );
+        })}
+      </Card.Group>
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
