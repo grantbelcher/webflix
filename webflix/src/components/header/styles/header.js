@@ -91,6 +91,8 @@ export const TextLink = styled.p`
 
   cursor: pointer;
 
+  font-weight: ${({ active }) => (active ? "bold" : "normal")};
+
   &:hover {
     font-weight: bold;
   }

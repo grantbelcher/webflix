@@ -2,25 +2,29 @@ import React, { useState, useContext, useEffect } from "react";
 import { SelectProfileContainer } from "./profile";
 import { FirebaseContext } from "../context/firebase";
 import Loading from "../components/loading";
-import { Header } from "../components";
+import { Card, Header } from "../components";
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 
 export function BrowseContainer({ slides }) {
+  const [category, setCategory] = useState("series");
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [slideRows, setSlideRows] = useState([]);
 
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
-
-  console.log(loading, "loading", profile);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 3500);
   }, [profile.displayName]);
+
+  useEffect(() => {
+    setSlideRows(slides[category]);
+  }, [slides, category]);
 
   return profile.displayName ? (
     <>
@@ -29,8 +33,18 @@ export function BrowseContainer({ slides }) {
         <Header.Frame>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} alt="Webflix" src={logo} />
-            <Header.TextLink>Series</Header.TextLink>
-            <Header.TextLink>Films</Header.TextLink>
+            <Header.TextLink
+              active={category === "series" ? true : false}
+              onClick={() => setCategory("series")}
+            >
+              Series
+            </Header.TextLink>
+            <Header.TextLink
+              active={category === "films" ? true : false}
+              onClick={() => setCategory("films")}
+            >
+              Films
+            </Header.TextLink>
           </Header.Group>
           <Header.Group>
             <Header.Search value={searchTerm} setSearchTerm={setSearchTerm} />
