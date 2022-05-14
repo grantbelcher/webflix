@@ -77,10 +77,10 @@ export const TextLink = styled.p`
   color: white;
   text-decoration: none;
   margin-right: 30px;
-  font-weight: ${({ active }) => (active === true ? "700" : "normal")};
+
   cursor: pointer;
 
-  &hover {
+  &:hover {
     font-weight: bold;
   }
 `;
@@ -99,6 +99,15 @@ export const Group = styled.div`
   align-items: center;
 `;
 
+export const Picture = styled.button`
+  background: url(${({ src }) => src})
+  background-size: contain;
+  border: 0;
+  width 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
 export const Dropdown = styled.div`
   display: none;
   background-color: black;
@@ -107,6 +116,60 @@ export const Dropdown = styled.div`
   width: 100px;
   top: 32px;
   right: 10px;
+  &:hover > ${Picture} {
+    border: 3px solid white;
+  }
+
+  ${Group}:last-of-type ${TextLink} {
+    cursor: pointer;
+  }
+
+  ${Group} {
+    margin-bottom: 10px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  ${TextLink},${Picture} {
+    cursor: default;
+  }
+  button {
+    margin-right: 10px;
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+`;
+
+// &:hover ${Name} {
+//   font-weight: bold;
+//   color: white;
+// }
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+export const SearchInput = styled.input``;
+export const SearchIcon = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
 `;
 
 export const Profile = styled.div`
@@ -123,13 +186,4 @@ export const Profile = styled.div`
     display: flex;
     flex-direction: column;
   }
-`;
-
-export const Picture = styled.button`
-  background: url(${({ src }) => src})
-  background-size: contain;
-  border: 0;
-  width 32px;
-  height: 32px;
-  cursor: pointer;
 `;

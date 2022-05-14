@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Button,
   ButtonLink,
@@ -9,6 +11,9 @@ import {
   TextLink,
   Feature,
   Picture,
+  Search,
+  SearchIcon,
+  SearchInput,
   Background,
   Container,
   Group,
@@ -35,6 +40,27 @@ Header.Picture = function HeaderPicture({ src, ...restProps }) {
 };
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
   return <Profile {...restProps}>{children}</Profile>;
+};
+
+Header.Search = function HeaderSearch({
+  searchTerm,
+  setSearchTerm,
+  ...restProps
+}) {
+  const [searchActive, setSearchActive] = useState(false);
+  return (
+    <Search {...restProps}>
+      <SearchIcon
+        onClick={() => setSearchActive((searchActive) => !searchActive)}
+      >
+        <img src="/images/icons/icons/search.png" alt="search" />
+      </SearchIcon>
+      <SearchInput
+        value={searchTerm}
+        onChange={({ target }) => setSearchTerm(target.value)}
+      />
+    </Search>
+  );
 };
 
 Header.Text = function HeaderText({ children, ...restProps }) {
