@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { SelectProfileContainer } from "./profile";
+import { FooterContainer } from "./footer";
 import { FirebaseContext } from "../context/firebase";
 import Loading from "../components/loading";
 import { Card, Header } from "../components";
@@ -110,6 +111,7 @@ export function BrowseContainer({ slides }) {
           );
         })}
       </Card.Group>
+      <FooterContainer></FooterContainer>
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
